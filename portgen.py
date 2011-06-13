@@ -1,5 +1,5 @@
 #
-# Generate a port number from string in specified interval
+# Generate a port number in specified interval from string
 # 
 # Copyright (C) 2011 by William Tisater
 # 
