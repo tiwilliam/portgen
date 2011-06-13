@@ -1,5 +1,5 @@
 #
-# Python port generator: Generate port from string
+# Generate a port number from string in specified interval
 # 
 # Copyright (C) 2011 by William Tisater
 # 
@@ -21,17 +21,21 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #
 
-def generate(tag):
-	ul = len(tag)
-	ul ^= ul << 2
+def generate(tag, min, max):
+	diff = max - min
+
+	port = len(tag)
+	port ^= port << 28
 
 	for c in tag:
-		ul += ord(c)
-		ul ^= (ul >> 2)
+		port += ord(c)
+		port += (port << 10)
+		port ^= (port >> 6)
 
-	port = 1024 + ul
+	port += (port << 3)
+	port ^= (port >> 11)
+	port += (port << 15)
 
-	if port >= 49151:
-		return 0
+	port = (port % diff) + min
 
 	return port

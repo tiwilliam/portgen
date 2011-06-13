@@ -1,11 +1,7 @@
-Generate a port number from string in interval 1024-49151
+Generate a port number from string in specified interval
 
 --------------------------------------------------------------------
 
 >>> import portgen
->>> portgen.generate('frank')
-1743
-
---------------------------------------------------------------------
-
-Return value from generate() will be 0 if the hash exceeds 49151
+>>> print portgen.generate('frank', 1024, 49151)
+16428
