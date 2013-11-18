@@ -1,7 +1,0 @@
-Generate a port number in specified interval from string
-
---------------------------------------------------------------------
-
->>> import portgen
->>> print portgen.generate('frank', 1024, 49151)
-16428
