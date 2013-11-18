@@ -1,4 +1,6 @@
-# Generate port number from any string
+# Generate port numbers
+
+Set any integer range and then hash any given string to a number within your range.
 
 ```python
 >>> import portgen
